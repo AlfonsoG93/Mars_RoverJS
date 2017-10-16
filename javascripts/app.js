@@ -125,29 +125,29 @@ function moveForward(rover){
   switch (rover.currDir) {
     case "N":
     //if(rover.y > 0){
-    if ((rover.y > 0) && (grid[rover.x][rover.y -1] === "[       ]" )){
+    if ((rover.y > 0) && (grid[rover.x][rover.y --] === "[       ]" )){
     rover.y --;
     console.log("Rover coordinates : (" + rover.x +", " + rover.y + "). ");
     rover.travelLog.push(new coordinate(rover.x,rover.y));
-  } else if (grid[rover.x][rover.y -1] === "[Obstacle]") {
+  } else if (grid[rover.x][rover.y --] === "[Obstacle]") {
     console.log("Invalid move, obstacle ahead!");
   }else{
     console.log("Invalid move, out of bounds!");
   }
       break;
     case "S":
-    if ((rover.y < 9) && (grid[rover.x][rover.y + 1] === "[       ]" )){
+    if ((rover.y < 9) && (grid[rover.x][rover.y ++] === "[       ]" )){
     rover.y ++;
     console.log("Rover coordinates : (" + rover.x +", " + rover.y + "). ");
     rover.travelLog.push(new coordinate(rover.x,rover.y));
-  } else if (grid[rover.x][rover.y +1] === "[Obstacle]") {
+  } else if (grid[rover.x][rover.y ++] === "[Obstacle]") {
     console.log("Invalid move, obstacle ahead!");
   }else {
     console.log("Invalid move, out of bounds!");
   }
       break;
     case "E":
-    if ((rover.x < 9) && (grid[rover.x +1 ][rover.y] === "[       ]" )){
+    if ((rover.x < 9) && (grid[rover.x ++ ][rover.y] === "[       ]" )){
     rover.x ++;
     console.log("Rover coordinates : (" + rover.x +", " + rover.y + "). ");
     rover.travelLog.push(new coordinate(rover.x,rover.y));
@@ -158,11 +158,11 @@ function moveForward(rover){
   }
       break;
     case "W":
-    if ((rover.x > 0) && (grid[rover.x - 1][rover.y] === "[       ]" )){
+    if ((rover.x > 0) && (grid[rover.x --][rover.y] === "[       ]" )){
     rover.x --;
     console.log("Rover coordinates : (" + rover.x +", " + rover.y + "). ");
     rover.travelLog.push(new coordinate(rover.x,rover.y));
-  }else if (grid[rover.x -1][rover.y] === "[Obstacle]") {
+  }else if (grid[rover.x --][rover.y] === "[Obstacle]") {
     console.log("Invalid move, obstacle ahead!");
   }else {
     console.log("Invalid move, out of bounds!");
